@@ -1,0 +1,25 @@
+{
+  "name": "VerdanskBot",
+  "version": "1.0.0",
+  "description": "Discord bot for wonderful warzone sessions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliusbendezu/VerdanskBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliusbendezu/VerdanskBot/issues"
+  },
+  "homepage": "https://github.com/juliusbendezu/VerdanskBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
