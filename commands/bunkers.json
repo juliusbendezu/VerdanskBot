@@ -1,0 +1,56 @@
+{
+	"military_north": {
+		"img": "mili_north",
+		"matcher": "regexp"
+	},
+	"military_south": {
+		"img": "mili_south",
+		"matcher": "regexp"
+	},
+	"dam": {
+		"img": "dam",
+		"matcher": "regexp"
+	},
+	"quarry": {
+		"img": "quarry",
+		"matcher": "regexp"
+	},
+	"stadium": {
+		"img": "stadium",
+		"matcher": "regexp"
+	},
+	"tv_station": {
+		"img": "tv",
+		"code": "27495810",
+		"matcher": "regexp"
+	},
+	"farmland": {
+		"img": "farm",
+		"code": "49285163",
+		"matcher": "regexp"
+	},
+	"prison": {
+		"img": "prison",
+		"code": "72948531",
+		"matcher": "regexp"
+	},
+	"park": {
+		"img": "park",
+		"code": "60274513",
+		"matcher": "regexp"
+	},
+	"hills": {
+		"img": "hills",
+		"matcher": "regexp"
+	},
+	"boneyard_north": {
+		"img": "bone_north",
+		"code": "87624851",
+		"matcher": "regexp"
+	},
+	"boneyard_south": {
+		"img": "bone_south",
+		"code": "97264138",
+		"matcher": "regexp"
+	}
+}
