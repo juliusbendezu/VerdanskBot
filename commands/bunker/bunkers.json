@@ -19,7 +19,7 @@
 		"img": "stadium",
 		"matcher": "stadi?(u|o)m?"
 	},
-	"tv_station": {
+	"tv-station": {
 		"img": "tv",
 		"code": "27495810",
 		"matcher": "(te?ve?[_\\- ]*)(stat(i?on)?)?"

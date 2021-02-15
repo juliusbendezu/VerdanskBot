@@ -9,7 +9,7 @@ const getLocationInfo = (location) => {
 			isMatch = regex.test(location);
 		}
 		if (isMatch) {
-			locationInfo.push([k, v]);
+			locationInfo.push({ name: k, ...v });
 		}
 	}
 	return locationInfo;
@@ -35,16 +35,15 @@ const handleCommand = (msg, args) => {
 		msg.channel.send(bunkerCodesImg);
 	}
 
-	const info = locationInfo.reduce((acc, [name, loc], i) => {
+	const info = locationInfo.reduce((acc, { name, img, code }, i) => {
 		name = (name[0].toUpperCase() + name.substring(1)).replace('_', ' ');
-		console.log(`Location ${i}:`, [name, loc]);
+		console.log(`Location ${i}:`, { name, img, code });
 
 		if (!showFullMap) {
-			acc += loc.img + '\n';
+			acc += img + '\n';
 		}
 
-		const code = loc.code ? loc.code : 'X';
-		acc += `${name} - Code: ${code}\n`;
+		acc += `${name} - Code: ${code ? code : 'X'}\n`;
 		return acc;
 	}, '');
 
