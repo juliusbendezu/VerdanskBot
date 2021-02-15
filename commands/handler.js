@@ -12,6 +12,7 @@ const runCommand = (command, args, msg) => {
 			return func(msg, args); //Run first command that matches passed command
 		}
 	}
+	msg.channel.send('есть!');
 }
 
 const isValid = (msg) => {
@@ -29,10 +30,5 @@ module.exports = (msg) => {
 		return;
 	}
 	const [command, ...args] = msg.content.substring(1).toLowerCase().split(' ');
-	try {
-		runCommand(command, args, msg);
-	} catch (err) {
-		console.log(err);
-		msg.channel.send('есть!');
-	}
+	runCommand(command, args, msg);
 }
