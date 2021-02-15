@@ -1,3 +1,4 @@
+const { CLIENT_ID } = require('../config');
 const { commandMatcher: bunkerMatcher, handleCommand: bunker } = require('./bunker/command');
 
 const commands = [
@@ -15,7 +16,7 @@ const runCommand = (command, args, msg) => {
 }
 
 const isValid = (msg) => {
-	if (msg.author.id == client.user.id) { //don't respond to self
+	if (msg.author.id == CLIENT_ID) { //don't respond to self
 		return false;
 	}
 	if (msg.content.charAt(0) != '!') { //don't respond to msg not starting with "!"

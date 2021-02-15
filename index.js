@@ -1,6 +1,6 @@
+const { TOKEN } = require('./config');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { TOKEN, CLIENT_ID, CLIENT_SECRET } = require('./config');
 const commandHandler = require('./commands/handler');
 
 client.on('ready', () => {
@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-	commandHandler(msg, client);
+	commandHandler(msg);
 });
 
 client.login(TOKEN);

@@ -9,8 +9,7 @@ if (result.error) {
 	console.log(result.parsed)
 	config = {
 		TOKEN: process.env.TOKEN,
-		CLIENT_ID: process.env.CLIENT_ID,
-		CLIENT_SECRET: process.env.CLIENT_SECRET
+		CLIENT_ID: process.env.CLIENT_ID
 	}
 }
 
