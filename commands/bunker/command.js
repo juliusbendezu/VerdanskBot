@@ -5,7 +5,6 @@ const getLocationInfo = (location) => {
 		let isMatch = true;
 		let regex;
 		if (location && !location.includes('all')) {
-			//Expressions tested with regexr.com
 			regex = new RegExp(v.matcher);
 			isMatch = regex.test(location);
 		}
@@ -22,8 +21,9 @@ const handleCommand = (msg, args) => {
 	const location = args ? args.join(' ') : null;
 
 	let showFullMap = location == 'all' || !location;
-	const locationInfo = getLocationInfo(location);
+	let locationInfo = getLocationInfo(location);
 	if (locationInfo.length == 0) { //If no match is found, be kind and show all instead of nothing
+		msg.channel.send(location + '?');
 		locationInfo = getLocationInfo('all');
 		showFullMap = true;
 	}
@@ -51,7 +51,4 @@ const handleCommand = (msg, args) => {
 	msg.channel.send(info);
 }
 
-module.exports = {
-	commandMatcher,
-	handleCommand
-}
+module.exports = { name: 'Bunker', regex: commandMatcher, func: handleCommand };
