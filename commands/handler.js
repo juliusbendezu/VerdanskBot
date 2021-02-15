@@ -26,9 +26,8 @@ const isValid = (msg) => {
 }
 
 module.exports = (msg) => {
-	if (!isValid(msg)) {
-		return;
+	if (isValid(msg)) {
+		const [command, ...args] = msg.content.substring(1).toLowerCase().split(' ');
+		runCommand(command, args, msg);
 	}
-	const [command, ...args] = msg.content.substring(1).toLowerCase().split(' ');
-	runCommand(command, args, msg);
 }
