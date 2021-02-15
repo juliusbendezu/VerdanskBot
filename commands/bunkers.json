@@ -1,56 +1,56 @@
 {
 	"military_north": {
 		"img": "mili_north",
-		"matcher": "regexp"
+		"matcher": "mil+i(tary)? ?(north|n)?"
 	},
 	"military_south": {
 		"img": "mili_south",
-		"matcher": "regexp"
+		"matcher": "mil+i(tary)? ?(south|s)?"
 	},
 	"dam": {
 		"img": "dam",
-		"matcher": "regexp"
+		"matcher": "dam+"
 	},
 	"quarry": {
 		"img": "quarry",
-		"matcher": "regexp"
+		"matcher": "qua?rr*(y|i)"
 	},
 	"stadium": {
 		"img": "stadium",
-		"matcher": "regexp"
+		"matcher": "stadi?(u|o)m?"
 	},
 	"tv_station": {
 		"img": "tv",
 		"code": "27495810",
-		"matcher": "regexp"
+		"matcher": "(te?ve?[_\\- ]*)(stat(i?on)?)?"
 	},
 	"farmland": {
 		"img": "farm",
 		"code": "49285163",
-		"matcher": "regexp"
+		"matcher": "farm(land)?"
 	},
 	"prison": {
 		"img": "prison",
 		"code": "72948531",
-		"matcher": "regexp"
+		"matcher": "(pris(on)?)|(jail)|(gulag)"
 	},
 	"park": {
 		"img": "park",
 		"code": "60274513",
-		"matcher": "regexp"
+		"matcher": "par+k(en)?"
 	},
 	"hills": {
 		"img": "hills",
-		"matcher": "regexp"
+		"matcher": "hil+s*"
 	},
 	"boneyard_north": {
 		"img": "bone_north",
 		"code": "87624851",
-		"matcher": "regexp"
+		"matcher": "bone(yard| ?zone)? ?(north|n)?"
 	},
 	"boneyard_south": {
 		"img": "bone_south",
 		"code": "97264138",
-		"matcher": "regexp"
+		"matcher": "bone(yard| ?zone)? ?(south|s)?"
 	}
 }
