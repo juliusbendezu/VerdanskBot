@@ -1,18 +1,38 @@
-const utilityCommands = require('./utilityCommands');
-const defaultCommand = (msg) => {
-	// msg.channel.send(msg.content);
+const { commandMatcher: bunkerMatcher, handleCommand: bunker } = require('./bunker/command');
+
+const commands = [
+	[bunkerMatcher, bunker]
+];
+
+const runCommand = (command, args, msg) => {
+	console.log('Command to match:', command);
+	for (const [regex, func] of commands) {
+		if (regex.test(command)) {
+			console.log(`"${command}" matched to "${func.name}" command with "${regex}"`);
+			return func(msg, args); //Run first command that matches passed command
+		}
+	}
 }
 
-module.exports = (msg, client) => {
-	if (msg.author.id == client.user.id) {
+const isValid = (msg) => {
+	if (msg.author.id == client.user.id) { //don't respond to self
+		return false;
+	}
+	if (msg.content.charAt(0) != '!') { //don't respond to msg not starting with "!"
+		return false;
+	}
+	return true;
+}
+
+module.exports = (msg) => {
+	if (!isValid(msg)) {
 		return;
 	}
-
-	if (msg.content.charAt(0) == '!') {
-		console.log('Utility command called');
-		utilityCommands(msg);
-	} else {
-		console.log('Default command executed');
-		defaultCommand(msg);
+	const [command, ...args] = msg.content.substring(1).toLowerCase().split(' ');
+	try {
+		runCommand(command, args, msg);
+	} catch (err) {
+		console.log(err);
+		msg.channel.send('есть!');
 	}
-};
+}
