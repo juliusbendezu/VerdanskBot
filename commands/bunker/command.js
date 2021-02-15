@@ -29,7 +29,7 @@ const handleCommand = (msg, args) => {
 	}
 
 	if (showFullMap) {
-		const bunkerLocationsImg = 'https://imgur.com/B9Pp9lI';
+		const bunkerLocationsImg = 'https://imgur.com/FnVjHrs';
 		const bunkerCodesImg = 'https://imgur.com/a/yY6Nka8';
 		msg.channel.send(bunkerLocationsImg);
 		msg.channel.send(bunkerCodesImg);
