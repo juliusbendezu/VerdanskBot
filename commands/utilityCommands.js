@@ -1,48 +1,23 @@
-const commands = {
-	a: (msg, args) => {
-		console.log('A command');
-	},
-	bunker: (msg, args) => {
-		console.log(args);
-		const locations = require('./bunkers.json');
-		const bunkerLocationsImg = 'https://imgur.com/B9Pp9lI';
-		const bunkerCodesImg = 'https://imgur.com/a/yY6Nka8';
+const { commandMatcher: bunkerMatcher, handleCommand: bunker } = require('./bunker/command');
 
-		msg.channel.send('Bunkers:');
-		msg.channel.send(bunkerLocationsImg);
-		msg.channel.send('Bunkers with codes:');
-		msg.channel.send(bunkerCodesImg);
+const commands = [
+	[bunkerMatcher, bunker]
+];
 
-		//TODO: surround with check for args, args should be tested with locations matcher regex to display/print specific bunker
-		let codes = "";
-		Object.entries(locations).forEach(([key, value]) => {
-			if (value.code) {
-				codes += `${key} code: ${value.code}\n`;
-			}
-		});
-		msg.channel.send(codes);
-	}
-}
-
-const parseCommand = (command) => {
-	console.log(command);
-
-	const commandMatcher = new Map([
-		[/bunk(er)?s?(codes?)?/, 'bunker'],
-	]);
-
-	for (const [regex, com] of commandMatcher) {
+const runCommand = (command, args, msg) => {
+	console.log('Command to match:', command);
+	for (const [regex, func] of commands) {
 		if (regex.test(command)) {
-			return com;
+			console.log(`"${command}" matched to "${func.name}" command with "${regex}"`);
+			return func(msg, args); //Run first command that matches passed command
 		}
 	}
 }
 
 module.exports = (msg) => {
-	let [command, args] = msg.content.substring(1).toLowerCase().split(' ', 2);
-	command = parseCommand(command);
+	const [command, ...args] = msg.content.substring(1).toLowerCase().split(' ');
 	try {
-		commands[command](msg, args);
+		runCommand(command, args, msg);
 	} catch (err) {
 		console.log(err);
 		msg.channel.send('есть!');
