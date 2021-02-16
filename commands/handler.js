@@ -1,6 +1,23 @@
 const { CLIENT_ID } = require('../config');
 
+const helpCommand = {
+    name: 'help',
+    regex: /h(elp)?/,
+    func: (msg, args) => {
+        let availableCommands = '**Available commands at the moment:**\n\n';
+        for (const { name, regex, desc } of commands) {
+            availableCommands += `**!${name}** or anything matching **${regex}**\n`;
+            if (/-d|desc(ribe|ription)?/.test(args)) {
+                availableCommands += `${desc}\n\n`
+            }
+        }
+        msg.channel.send(availableCommands);
+    },
+    desc: `Really?`
+}
+
 const commands = [
+    helpCommand,
     require('./bunker/command'),
 ];
 

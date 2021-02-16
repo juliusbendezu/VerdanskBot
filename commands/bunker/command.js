@@ -15,6 +15,20 @@ const getLocationInfo = (location) => {
     return locationInfo;
 }
 
+const getDescription = () => {
+    let description =
+        'A command for finding bunker locations and their possible codes.\n' +
+        'Will show all if 0 or "all" arguments are passed, or a specific location if a matching argument is passed. ' +
+        'Locations and matchers below:\n\n';
+
+    for (const name in locations) {
+        let n = (name[0].toUpperCase() + name.substring(1)).replace('_', ' ');
+        let matcher = locations[name].matcher;
+        description += `**${n}** matches to **${matcher}**\n`
+    }
+    return description;
+}
+
 const commandMatcher = /^bunk(er)?s?(codes?)?$/;
 
 const handleCommand = (msg, args) => {
@@ -50,4 +64,9 @@ const handleCommand = (msg, args) => {
     msg.channel.send(info);
 }
 
-module.exports = { name: 'Bunker', regex: commandMatcher, func: handleCommand };
+module.exports = {
+    name: 'bunker',
+    regex: commandMatcher,
+    func: handleCommand,
+    desc: getDescription()
+}
