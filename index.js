@@ -4,11 +4,11 @@ const client = new Discord.Client();
 const commandHandler = require('./commands/handler');
 
 client.on('ready', () => {
-	console.log('VerdanskBot at your service');
+    console.log('VerdanskBot at your service');
 });
 
 client.on('message', (msg) => {
-	commandHandler(msg);
+    commandHandler(msg);
 });
 
 client.login(TOKEN);

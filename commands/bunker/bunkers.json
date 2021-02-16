@@ -1,56 +1,56 @@
 {
-	"military_north": {
-		"img": "https://imgur.com/pvi50QT",
-		"matcher": "mil+i(tary)? ?(north|n)?"
-	},
-	"military_south": {
-		"img": "https://imgur.com/rVVjdCG",
-		"matcher": "mil+i(tary)? ?(south|s)?"
-	},
-	"dam": {
-		"img": "https://imgur.com/HDl6wtp",
-		"matcher": "dam+"
-	},
-	"quarry": {
-		"img": "https://imgur.com/UjjsAV2",
-		"matcher": "qua?rr*(y|i)"
-	},
-	"stadium": {
-		"img": "https://imgur.com/fCxwOHW",
-		"matcher": "stadi?(u|o)m?"
-	},
-	"tv-station": {
-		"img": "https://imgur.com/WuObRY1",
-		"code": "27495810",
-		"matcher": "(te?ve?[_\\- ]*)(stat(i?on)?)?"
-	},
-	"farmland": {
-		"img": "https://imgur.com/lRX16KT",
-		"code": "49285163",
-		"matcher": "farm(land)?"
-	},
-	"prison": {
-		"img": "https://imgur.com/4jW9aGo",
-		"code": "72948531",
-		"matcher": "(pris(on)?)|(jail)|(gulag)"
-	},
-	"park": {
-		"img": "https://imgur.com/cb9sobM",
-		"code": "60274513",
-		"matcher": "par+k(en)?"
-	},
-	"hills": {
-		"img": "https://imgur.com/V53XJiL",
-		"matcher": "hil+s*"
-	},
-	"boneyard_north": {
-		"img": "https://imgur.com/B6TPLu7",
-		"code": "87624851",
-		"matcher": "bone(yard| ?zone)? ?(north|n)?"
-	},
-	"boneyard_south": {
-		"img": "https://imgur.com/zLXLTIM",
-		"code": "97264138",
-		"matcher": "bone(yard| ?zone)? ?(south|s)?"
-	}
+    "military_north": {
+        "img": "https://imgur.com/pvi50QT",
+        "matcher": "mil+i(tary)? ?(north|n)?"
+    },
+    "military_south": {
+        "img": "https://imgur.com/rVVjdCG",
+        "matcher": "mil+i(tary)? ?(south|s)?"
+    },
+    "dam": {
+        "img": "https://imgur.com/HDl6wtp",
+        "matcher": "dam+"
+    },
+    "quarry": {
+        "img": "https://imgur.com/UjjsAV2",
+        "matcher": "qua?rr*(y|i)"
+    },
+    "stadium": {
+        "img": "https://imgur.com/fCxwOHW",
+        "matcher": "stadi?(u|o)m?"
+    },
+    "tv-station": {
+        "img": "https://imgur.com/WuObRY1",
+        "code": "27495810",
+        "matcher": "(te?ve?[_\\- ]*)(stat(i?on)?)?"
+    },
+    "farmland": {
+        "img": "https://imgur.com/lRX16KT",
+        "code": "49285163",
+        "matcher": "farm(land)?"
+    },
+    "prison": {
+        "img": "https://imgur.com/4jW9aGo",
+        "code": "72948531",
+        "matcher": "(pris(on)?)|(jail)|(gulag)"
+    },
+    "park": {
+        "img": "https://imgur.com/cb9sobM",
+        "code": "60274513",
+        "matcher": "par+k(en)?"
+    },
+    "hills": {
+        "img": "https://imgur.com/V53XJiL",
+        "matcher": "hil+s*"
+    },
+    "boneyard_north": {
+        "img": "https://imgur.com/B6TPLu7",
+        "code": "87624851",
+        "matcher": "bone(yard| ?zone)? ?(north|n)?"
+    },
+    "boneyard_south": {
+        "img": "https://imgur.com/zLXLTIM",
+        "code": "97264138",
+        "matcher": "bone(yard| ?zone)? ?(south|s)?"
+    }
 }
