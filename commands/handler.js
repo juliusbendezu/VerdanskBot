@@ -21,6 +21,7 @@ const helpCommand = {
 const commands = [
     helpCommand,
     require('./bunker/command'),
+    require('./locations/randomDrop')
 ];
 
 const runCommand = (command, args, msg) => {
