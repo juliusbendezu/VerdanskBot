@@ -4,11 +4,13 @@ const helpCommand = {
     name: 'help',
     regex: /^h(elp)?$/,
     func: (msg, args) => {
-        let availableCommands = '**Available commands at the moment:**\n\n';
+        let availableCommands = '**Available commands at the moment:**\n';
         for (const { name, regex, desc } of commands) {
-            availableCommands += `**!${name}** or anything matching **${regex}**\n`;
+            availableCommands += `\`\`\`!${name} or anything matching ${regex}`;
             if (/-d|desc(ribe|ription)?/.test(args)) {
-                availableCommands += `${desc}\n\n`
+                availableCommands += `\n\n${desc}\n\n\`\`\``
+            } else {
+                availableCommands += '\`\`\`';
             }
         }
         msg.channel.send(availableCommands);
