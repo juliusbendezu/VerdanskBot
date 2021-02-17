@@ -2,7 +2,7 @@ const { CLIENT_ID } = require('../config');
 
 const helpCommand = {
     name: 'help',
-    regex: /h(elp)?/,
+    regex: /^h(elp)?$/,
     func: (msg, args) => {
         let availableCommands = '**Available commands at the moment:**\n\n';
         for (const { name, regex, desc } of commands) {
