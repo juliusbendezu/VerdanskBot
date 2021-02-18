@@ -1,7 +1,7 @@
 const locations = require('./locations.json').locations;
 
 const getDescription = () => {
-    const locationList = locations.sort().reduce((acc, loc) => acc += `[${loc}]\n`, '');
+    const locationList = locations.sort().reduce((acc, loc) => acc += `- ${loc}\n`, '');
     return `Get a random location to drop at from this list:\n\n${locationList}`;
 }
 

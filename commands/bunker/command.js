@@ -24,7 +24,7 @@ const getDescription = () => {
     for (const name in locations) {
         let n = (name[0].toUpperCase() + name.substring(1)).replace('_', ' ');
         let matcher = locations[name].matcher;
-        description += `[${n}] matched by /${matcher}/\n`
+        description += `[${n}] - matched by /${matcher.replace('*', '\\*')}/\n`
     }
     return description;
 }
