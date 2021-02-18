@@ -4,7 +4,8 @@ const { PREFIX } = require('../consts');
 const commands = [
     require('./help/command'),
     require('./bunker/command'),
-    require('./locations/randomDrop')
+    require('./locations/randomDrop/command'),
+    require('./locations/addDrop/command')
 ];
 
 const commandDescriptions = commands.map(({ name, regex, desc }) => { return { name, regex, desc } });

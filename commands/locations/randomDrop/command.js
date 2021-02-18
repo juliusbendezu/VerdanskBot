@@ -1,4 +1,4 @@
-const locations = require('./locations.json').locations;
+const locations = require('../locations.json').locations;
 
 const getDescription = () => {
     const locationList = locations.sort().reduce((acc, loc) => acc += `- ${loc}\n`, '');
