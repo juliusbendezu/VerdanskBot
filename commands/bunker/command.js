@@ -31,7 +31,7 @@ const getDescription = () => {
 
 const commandMatcher = /^bunk(er)?s?(codes?)?$/;
 
-const handleCommand = (msg, args) => {
+const execute = (msg, args) => {
     const location = args ? args.join(' ') : null;
 
     let showFullMap = location == 'all' || !location;
@@ -67,6 +67,6 @@ const handleCommand = (msg, args) => {
 module.exports = {
     name: 'bunker',
     regex: commandMatcher,
-    func: handleCommand,
+    execute: execute,
     desc: getDescription()
 }

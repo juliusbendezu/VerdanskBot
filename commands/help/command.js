@@ -12,7 +12,7 @@ const makeMessage = (fields, withFooter) => {
     return embed;
 }
 
-const handleCommand = (msg, args, commands) => {
+const execute = (msg, args, commands) => {
     let descriptive = false;
     if (args) {
         if (/-d|desc(ribe|ription)?/.test(args[0]) && args.length == 1) {
@@ -42,6 +42,6 @@ const handleCommand = (msg, args, commands) => {
 module.exports = {
     name: 'help',
     regex: /^h(elp)?$/,
-    func: handleCommand,
+    execute,
     desc: ''
 }

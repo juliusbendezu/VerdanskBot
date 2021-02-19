@@ -11,7 +11,7 @@ const getRandomLocation = (cardinal) => {
     let i = Math.floor(Math.random() * locations.length);
     return locations[i];
 }
-const handleCommand = (msg, args) => {
+const execute = (msg, args) => {
     //Args could be cardinal directions to pass to getRandomLocation
     const loc = getRandomLocation();
     const message = `You should drop here: **${loc}**`;
@@ -21,6 +21,6 @@ const handleCommand = (msg, args) => {
 module.exports = {
     name: 'drop',
     regex: /^drop(\?)?$/,
-    func: handleCommand,
+    execute,
     desc: getDescription()
 }

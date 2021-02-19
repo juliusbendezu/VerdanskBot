@@ -12,10 +12,10 @@ const commandDescriptions = commands.map(({ name, regex, desc }) => { return { n
 
 const runCommand = (command, args, msg) => {
     console.log('Command to match:', command);
-    for (const { name, regex, func } of commands) {
+    for (const { name, regex, execute } of commands) {
         if (regex.test(command)) {
             console.log(`"${command}" matched to the "${name}" command with "${regex}"`);
-            return func(msg, args, commandDescriptions); //Run first command that matches passed command
+            return execute(msg, args, commandDescriptions); //Run first command that matches passed command
         }
     }
     msg.channel.send('есть!');
