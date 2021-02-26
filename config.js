@@ -7,8 +7,8 @@ if (result.error) {
     console.log(result.error);
 } else {
     config = {
-        TOKEN: process.env.TOKEN,
-        CLIENT_ID: process.env.CLIENT_ID
+        TOKEN: process.env.DISCORD_TOKEN,
+        CLIENT_ID: process.env.DISCORD_CLIENT_ID
     }
 }
 
